@@ -1,0 +1,35 @@
+<html>
+<body>
+<script>
+	function power(a,b,p)
+	{
+		if(b==1)
+			return a;
+		else
+			return (a**b)%(p);
+	}
+ var b,i,a,aa;
+ var x,y,ka,kb,g,p;
+ aa = window.prompt("Enter p");
+ p=parseInt(aa);
+ aa = window.prompt("Enter g");
+ g=parseInt(aa);
+ aa = window.prompt("Enter a");
+ a=parseInt(aa);
+ x=power(g,a,p);
+ aa = window.prompt("Enter b");
+ b=parseInt(aa);
+ y=power(g,b,p);
+ ka=power(y,a,p);
+ document.writeln("Alice:");
+ document.writeln("Private Key : "+a);
+ document.writeln("Computed public key : "+x);
+ document.writeln("Shared Secret : "+ka);
+ kb=power(x,b,p);
+ document.writeln("Bob:");
+ document.writeln("Private Key : "+b);
+document.writeln("Computed public key : "+y);
+ document.writeln("Shared Secret : "+kb);
+</script>
+</body>
+</html>
